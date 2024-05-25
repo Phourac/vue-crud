@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+import { provide } from "vue";
+
+import { FormInput, editId } from "../src/stores/Store.vue";
+
+provide("formInput", FormInput);
+provide("editId", editId);
 </script>
 
 <template>
@@ -16,8 +22,8 @@ import HelloWorld from "./components/HelloWorld.vue";
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">List</RouterLink>
+        <RouterLink to="/form">Form</RouterLink>
       </nav>
     </div>
   </header>
